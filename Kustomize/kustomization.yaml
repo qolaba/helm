@@ -1,0 +1,17 @@
+apiVersion: "helm.openshift.io/v1alpha1"
+kind: "HelmChartInflationGenerator"
+metadata:
+  name: "my-chart-inflation"
+spec:
+  releaseName: "my-release"
+  chart:
+    spec:
+      chart: "weaviate"
+      version: "1.0.0"
+      sourceRef:
+        kind: "Git"
+        name: "my-chart-repo"
+        contextDir: "charts/weaviate"
+  values:
+    # Define your required values for the Helm chart here
+    key1: weaviate
